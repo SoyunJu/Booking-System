@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>예약</title>
+<link rel="stylesheet" th:href="@{/css/bookingList.css}" />
+</head>
+<body>
+	<div class="container">
+		<h1>전달받은 데이터</h1>
+		<ul>
+			<li>연락처 <%= request.getParameter("bookingContact") %></li>
+			<li>이름 <%= request.getParameter("bookingName") %></li>
+			<li>룸선택 <%= request.getParameter("bookingRoom") %></li>
+			<li>예약일 <%= request.getParameter("bookingDt") %></li>
+		</ul>
+	</div>
+</body>
+</html>

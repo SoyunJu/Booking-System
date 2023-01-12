@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="booking.mapper.BookingMapper">
+
+	<select id="selectBookingList" resultType="booking.dto.BookingDto">
+		select booking_idx, booking_name, booking_contact, booking_room, booking_dt,
+			date_format (resigst_dt, '%Y-%m-%d %H:%i:%s') as resigst_dt
+		from t_booking
+			<!-- order by booking_idx desc;-->
+	</select>
+	
+	<insert id="insertBooking" parameterType="booking.dto.BookingDto">
+		insert into t_booking (booking_name, booking_contact, resigst_dt, booking_room, booking_dt)
+		values ( #{bookingName}, #{bookingContact}, now(), #{bookingRoom}, #{bookingDt})
+	</insert>
+	
+	<select id="selectBookingDetail" parameterType="int" resultType="booking.dto.BookingDto">
+		select booking_idx, booking_name, booking_contact, booking_room, booking_dt,
+			date_format (resigst_dt, '%Y-%m-%d %H:%i:%s') as resigst_dt
+		from t_booking
+	</select>
+	
+</mapper>

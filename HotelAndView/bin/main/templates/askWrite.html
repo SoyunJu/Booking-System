@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>문의하기</title>
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+
+</head>
+<body>
+
+<div class="container">
+      <h2>문의 등록</h2>
+      <form action="/insertAsk.do" method="POST" id="frm" name="frm">
+         <table class="ask_detail">
+            <tr>
+               <td>제목 </td>
+               <td><input type="text" id="title" name="title" /></td>
+            </tr>
+            <tr>
+               <td>작성자 </td>
+               <td><input type="text" id="name" name="name" /></td>
+            </tr>
+            <tr>
+               <td colspan="3"><textarea id="contents" name="contents"></textarea></td>
+            </tr>
+         </table>
+         <input type="submit" id="submit" value="확인" class="btn" />
+         <input type="submit" id="submit" value="목록" class="btn" />
+      </form>      
+   </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+   <meta charset="UTF-8" />
+   <title>예약</title>
+   <link rel="stylesheet" th:href="@{/css/bookingList.css}" />   
+</head>
+<body>
+   <div class="container">
+      <h2>예약 목록</h2>
+      <table class="booking_list">
+         <colgroup>
+            <col width="15%" />
+            <col width="*" />
+            <col width="15%" />
+            <col width="20%" />
+            <col width="15%" />
+         </colgroup>
+         <thead>
+            <tr>
+               <th scope="col">예약번호</th>
+               <th scope="col">예약자</th>
+               <th scope="col">전화번호</th>
+               <th scope="col">예약일</th>
+               <th scope="col">신청일</th>
+               <th scope="col">룸선택</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr th:if="${#lists.size(list)} > 0" th:each="booking : ${list}">
+               <td th:text="${booking.bookingIdx}"></td>
+               <td th:text="${booking.bookingName}"></td>
+               <td th:text="${booking.bookingContact}"></td>
+               <td th:text="${booking.bookingDt}"></td>
+               <td th:text="${booking.resigstDt}"></td>
+               <td th:text="${booking.bookingRoom}"></td>
+            </tr>
+            <tr th:unless="${#lists.size(list)} > 0">
+               <td colspan="6">조회된 결과가 없습니다.</td>
+            </tr>
+         </tbody>
+      </table>
+      <a href="openBookingWrite.do" class="btn">예약하기</a>
+   </div>
+</body>
+</html>

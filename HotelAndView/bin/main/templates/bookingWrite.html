@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>예약</title>
+	<link rel="stylesheet" th:href="@{/css/bookingList.css}" />
+</head>
+<body>
+	<div class="container">
+		<h2>예약하기</h2>
+		<form action="insertBooking.do" method="POST" id="frm" name="frm">
+			<table class="booking_detail">
+				<tr>
+					<td>연락처</td>
+					<td><input type="text" id="title" name="bookingContact"/></td>
+				</tr>
+				
+				<tr>
+					<td>이름</td>
+					<td><input type="text" id="title" name="bookingName"/></td>
+				</tr>
+				
+				<tr>
+					<td>룸선택</td>
+					<td><input type="text" id="title" name="bookingRoom"/></td>
+				</tr>
+				
+				<tr>
+					<td>예약일</td>
+					<td><input type="text" id="title" name="bookingDt"/></td>
+				</tr>
+				
+				
+<!-- 				<tr> -->
+<!-- 					<td colspan="4"><textarea id="contents" name="contents"></textarea></td> -->
+<!-- 				</tr> -->
+			</table>
+			<input type="submit" id="submit" value="예약" class="btn" />
+		</form>		
+	</div>
+</body>
+</html>
