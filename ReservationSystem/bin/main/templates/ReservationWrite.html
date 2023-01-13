@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>예약</title>
+	<link rel="stylesheet" th:href="@{/css/reservationList.css}" />
+</head>
+<body>
+	<div class="container">
+		<h2>예약하기</h2>
+		<form action="insertReservation.do" method="POST" id="frm" name="frm">
+			<table class="reservation_detail">
+				<tr>
+					<td>연락처</td>
+					<td><input type="text" id="title" name="reservationContact"/></td>
+				</tr>
+				
+				<tr>
+					<td>이름</td>
+					<td><input type="text" id="title" name="userName"/></td>
+				</tr>
+				
+				<tr>
+					<td>룸선택</td>
+					<td><input type="text" id="title" name="roomType"/></td>
+				</tr>
+				
+				<tr>
+					<td>체크인</td>
+					<td><input type="text" id="title" name="checkIn"/></td>
+				</tr>
+				
+				<tr>
+					<td>체크아웃</td>
+					<td><input type="text" id="title" name="checkOut"/></td>
+				</tr>
+				
+				<tr>
+					<td>Pool예약</td>
+					<td><input type="radio" name="poolReservation" value="Y" id="poolReservation" checked="checked"/><label for="radioY">Y</label>
+					<td><input type="radio" name="poolReservation" value="N" id="poolReservation" checked="checked"/><label for="radioY">N</label>					
+				</tr>
+				
+				
+<!-- 				<tr> -->
+<!-- 					<td colspan="4"><textarea id="contents" name="contents"></textarea></td> -->
+<!-- 				</tr> -->
+			</table>
+			<input type="submit" id="submit" value="예약" class="btn" />
+		</form>		
+	</div>
+</body>
+</html>

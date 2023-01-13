@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+   <meta charset="UTF-8" />
+   <title>예약</title>
+   <link rel="stylesheet" th:href="@{/css/reservationList.css}" />   
+</head>
+<body>
+   <div class="container">
+      <h2>예약 목록</h2>
+      <table class="reservation_list">
+         <colgroup>
+            <col width="15%" />
+            <col width="*" />
+            <col width="15%" />
+            <col width="20%" />
+            <col width="15%" />
+         </colgroup>
+         <thead>
+            <tr>
+               <th scope="col">예약번호</th>
+               <th scope="col">예약자</th>
+               <th scope="col">연락처</th>
+               <th scope="col">체크인</th>
+               <th scope="col">체크아웃</th>
+               <th scope="col">룸타입</th>
+               <th scope="col">pool 예약</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr th:if="${#lists.size(list)} > 0" th:each="reservation : ${list}">
+               <td th:text="${reservation.reservationIdx}"></td>
+               <td th:text="${reservation.userName}"></td>
+               <td th:text="${reservation.reservationContact}"></td>
+               <td th:text="${reservation.checkIn}"></td>
+               <td th:text="${reservation.checkOut}"></td>
+               <td th:text="${reservation.roomType}"></td>
+               <td th:text="${reservation.poolReservation}"></td>
+            </tr>
+            <tr th:unless="${#lists.size(list)} > 0">
+               <td colspan="10">조회된 결과가 없습니다.</td>
+            </tr>
+         </tbody>
+      </table>
+      <a href="openReservationWrite.do" class="btn">예약하기</a>
+   </div>
+</body>
+</html>
